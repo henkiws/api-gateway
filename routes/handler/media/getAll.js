@@ -7,8 +7,7 @@ const api = apiAdapter(URL_SERVICE_MEDIA)
 
 module.exports = async (req, res) => {
     try {
-        const id = req.params.id
-        const media = await api.delete(`/media/${id}`)
+        const media = await api.get('/media')
         return res.json(media.data)
     }catch(error) {
 

@@ -13,6 +13,7 @@ const chaptersRouter = require('./routes/chapters');
 const lessonsRouter = require('./routes/lessons');
 const imageCoursesRouter = require('./routes/imageCourses');
 const myCoursesRouter = require('./routes/myCourses');
+const reviewsRouter = require('./routes/reviews');
 const ordersRouter = require('./routes/orders');
 const paymentsRouter = require('./routes/payments');
 const refreshTokensRouter = require('./routes/refreshTokens');
@@ -38,6 +39,7 @@ app.use('/media', mediaRouter);
 app.use('/mentors', verifyToken, mentorsRouter);
 app.use('/orders', ordersRouter);
 app.use('/payments', paymentsRouter);
+app.use('/reviews', verifyToken, reviewsRouter);
 app.use('/refresh-tokens', refreshTokensRouter);
 
 module.exports = app;
